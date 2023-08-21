@@ -2,7 +2,6 @@
 
 Bureaucrat::Bureaucrat() : name("Bureaucrat"), grade(150){}
 
-
 Bureaucrat::Bureaucrat(const Bureaucrat & copy) : name(copy.name)
 {
 	this->grade = copy.grade;
