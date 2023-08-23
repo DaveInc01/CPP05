@@ -2,6 +2,7 @@
 # define BUREAUCRAT_HPP
 
 #include <iostream>
+#include "Form.hpp"
 
 class Bureaucrat
 {
@@ -23,6 +24,7 @@ public:
 	struct GradeTooLowException : public std::exception{
 		const char* what() const throw();
 	};
+	void signForm(Form &) const;
 private:
 	const std::string name;
 	int grade;

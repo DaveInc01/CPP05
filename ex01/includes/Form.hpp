@@ -23,7 +23,8 @@ public:
 	struct GradeTooLowException : public std::exception{
 		const char* what() const throw();
 	};
-
+	void beSigned(Bureaucrat &);
+	void set_sign();
 private:
 	const std::string name;
 	bool  isSigned;

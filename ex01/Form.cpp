@@ -1,4 +1,5 @@
 #include "includes/Form.hpp"
+#include "includes/Bureaucrat.hpp"
 
 Form::Form() : name("form"), isSigned(false), grade_to_sign(150), grade_to_ex(150){}
 
@@ -61,5 +62,16 @@ std::ostream &operator<<(std::ostream &os, Form const &form)
 			  << "\ngrade to execution: " << form.get_grade_to_ex();
 }
 
+void Form::beSigned(Bureaucrat &obj)
+{
+	if(obj.getGrade() >= this->get_grade_to_sign())
+		throw(Form::GradeTooLowException());
+	this->isSigned = true;
+}
+
+void Form::set_sign()
+{
+	this->isSigned = true;
+}
 
 
