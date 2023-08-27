@@ -3,11 +3,11 @@
 int main()
 {
 	try{
-		Bureaucrat mister(1, "Mister");
+		Bureaucrat mister(149, "Mister");
 		mister.gradeDown();
+		mister.gradeUp();
+		mister.gradeUp();
 		std::cout << mister << std::endl;
-		mister.gradeUp();
-		mister.gradeUp();
 	}
 	catch (Bureaucrat::GradeTooHighException & x)
 	{

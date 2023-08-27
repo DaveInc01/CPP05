@@ -1,4 +1,4 @@
-NAME = bureaucrat
+NAME = form
 
 SRC = $(wildcard ./*.cpp)
 
@@ -13,7 +13,7 @@ RM = rm -rf
 all: $(NAME)
 
 $(NAME) : $(OBJ)
-	c++ $(CPPFLAGS) $(OBJ) -o $@ 
+	c++ $(CPPFLAGS) $(OBJ) -o $@
 
 fclean:
 	$(RM) $(OBJ) $(NAME)

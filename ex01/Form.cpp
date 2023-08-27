@@ -45,7 +45,6 @@ int Form::get_grade_to_ex() const
 	return grade_to_ex;
 }
 
-
 const char* Form::GradeTooHighException::what() const throw(){
 	return ("The grade is too high");
 }

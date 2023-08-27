@@ -4,8 +4,13 @@
 int main()
 {
 	try{
-		Form document("report", 150, 1);
+		Form document("report", 100, 1);
+		Bureaucrat *chief = new Bureaucrat(1, "chief");
+		std::cout << document << std::endl << std::endl;
+		document.beSigned(*chief);
+		// chief->signForm(document);
 		std::cout << document << std::endl;
+		delete chief;
 	}
 	catch (Form::GradeTooHighException & x)
 	{
