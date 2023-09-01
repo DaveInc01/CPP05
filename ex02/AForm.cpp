@@ -45,12 +45,29 @@ int AForm::get_grade_to_ex() const
 	return grade_to_ex;
 }
 
+bool AForm::is_signed() const
+{
+	return this->isSigned;
+}
+
+AForm::GradeTooHighException::GradeTooHighException() : s("The grade is too high")
+{}
+
+AForm::GradeTooHighException::GradeTooHighException(const char *str) : s(str)
+{}
+
+AForm::GradeTooLowException::GradeTooLowException() : s("The grade is too low")
+{}
+
+AForm::GradeTooLowException::GradeTooLowException(const char * str) : s(str)
+{}
+
 const char* AForm::GradeTooHighException::what() const throw(){
-	return ("The grade is too high");
+	return (s);
 }
 
 const char* AForm::GradeTooLowException::what() const throw(){
-	return ("The grade is too low");
+	return (s);
 }
 
 std::ostream &operator<<(std::ostream &os, AForm const &Aform)

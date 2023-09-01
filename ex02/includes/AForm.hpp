@@ -1,6 +1,7 @@
 #ifndef AFORM_HPP
 # define AFORM_HPP
 
+#include <fstream>
 #include <iostream>
 #include "Bureaucrat.hpp"
 // class Bureaucrat;
@@ -19,14 +20,33 @@ public:
 	int get_grade_to_sign() const;
 	int get_grade_to_ex() const;
 public:
-	struct GradeTooHighException : public std::exception{
+	class GradeTooHighException : public std::exception
+	{
+	public:
+		GradeTooHighException();
+		GradeTooHighException( const char * );
 		const char* what() const throw();
+	private:
+		const char *s;
 	};
-	struct GradeTooLowException : public std::exception{
+	class GradeTooLowException : public std::exception
+	{
+	public:
+		GradeTooLowException();
+		GradeTooLowException( const char * );
 		const char* what() const throw();
+	private:
+		const char *s;
 	};
+	// struct GradeTooHighException : public std::exception{
+	// 	const char* what() const throw();
+	// };
+	// struct GradeTooLowException : public std::exception{
+	// 	const char* what() const throw();
+	// };
 	void beSigned(Bureaucrat &);
 	void set_sign();
+	bool is_signed() const;
 	virtual void execute(Bureaucrat const & executor) const = 0;
 private:
 	const std::string name;

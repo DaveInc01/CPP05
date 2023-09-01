@@ -27,6 +27,7 @@ public:
 		const char* what() const throw();
 	};
 	void signForm(AForm &) const;
+	void executeForm(AForm const & form) const;
 private:
 	const std::string name;
 	int grade;

@@ -1,4 +1,5 @@
 #include "./includes/Bureaucrat.hpp"
+#include "includes/AForm.hpp"
 
 Bureaucrat::Bureaucrat() : name("Bureaucrat"), grade(150){}
 
@@ -88,5 +89,17 @@ void Bureaucrat::signForm(AForm & form) const
 	else
 	{
 		std::cout << this->getName() << "  couldn’t sign " << form.get_name() << " because the grade is too low" << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(AForm const & form) const
+{
+	if (this->grade <= form.get_grade_to_ex())
+	{
+		std::cout << this->getName() << " executed " << form.get_name() << std::endl;
+	}
+	else
+	{
+		std::cout << this->getName() << "  couldn’t execute " << form.get_name() << " because the grade is too low" << std::endl;
 	}
 }
