@@ -8,7 +8,6 @@ int main()
 		Bureaucrat *chief = new Bureaucrat(1, "chief");
 		std::cout << document << std::endl << std::endl;
 		document.beSigned(*chief);
-		// chief->signForm(document);
 		std::cout << document << std::endl;
 		delete chief;
 	}

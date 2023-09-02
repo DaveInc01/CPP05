@@ -1,10 +1,12 @@
-NAME = form
+NAME = intern
 
 SRC = $(wildcard ./*.cpp)
 
 OBJ=$(SRC:.cpp=.o)
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+
+STD = -std=c++98
 
 RM = rm -rf
 

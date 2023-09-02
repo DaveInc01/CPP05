@@ -3,7 +3,7 @@
 int main()
 {
 	try{
-		Bureaucrat mister(149, "Mister");
+		Bureaucrat mister(10, "Mister");
 		mister.gradeDown();
 		mister.gradeUp();
 		mister.gradeUp();

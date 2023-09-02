@@ -20,7 +20,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const{
 	}
 	if (executor.getGrade() > 45)
 	{
-		throw (AForm::GradeTooLowException());
+			throw (AForm::GradeTooLowException());
 	}
 	std::random_device rd;  // Obtain a random number from hardware
     std::mt19937 gen(rd()); // Seed the generator
@@ -31,4 +31,4 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const{
 		std::cout << this->target << " has been robotomized successfully" << std::endl;
 	else
 		std::cout << this->target << " was not robotomized in this time(" << std::endl;
-}
+};
